@@ -15,22 +15,27 @@ export default new Router({
       component: home,
       children:[
         {
+            name:'aa',
             path:'aa',
             component:aa
         },
         {
+          name:'bb',
           path:'bb',
           component:bb
         },
         {
+          name:'cc',
           path:'cc',
           component:cc
         },
         {
+          name:'dd',
           path:'dd',
           component:dd
         },
         {
+          name:'ee',
           path:'ee',
           component:ee
         }

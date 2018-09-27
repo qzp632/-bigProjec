@@ -1,16 +1,18 @@
 <template>
   <div class="hello">
+    <navTitle></navTitle>
     <navTab></navTab>
     <router-view></router-view>
- 
   </div>
 </template>
 
 <script>
 import navTab from './commonView/navTab'
+import navTitle from './commonView/navTitle'
 export default {
   components: {
-    navTab
+    navTab,
+    navTitle
   }
 }
 </script>

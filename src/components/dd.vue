@@ -8,11 +8,20 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
       msg: 'ddddddddddd'
     }
+  },
+  created() {
+    this.SETTITLE(this.$route.params.name)
+  },
+  methods: {
+    ...mapMutations([
+      'SETTITLE'
+    ]),
   }
 }
 </script>

@@ -8,7 +8,7 @@
 export default {
   name: 'App',
   created() {
-    this.$router.push('/aa')
+    this.$router.push({name:'aa',params: {name: '全球版图'}})
   }
 }
 </script>

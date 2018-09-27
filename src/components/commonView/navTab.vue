@@ -1,43 +1,20 @@
 <template>
     <div class="navTab">
-        <router-link to="/aa">
+        <router-link v-for="item in navTab" :key="item.id" :to="{name:item.path,params: {name: item.name}}">
             <span class="icon">
-                <img src="../images/tab1.png" alt="">
+                <img :src="require(`../images/tab${item.id}.png`)" alt="">
             </span>
-            <span class="title">全球版图</span>
-        </router-link></li>
-        <router-link to="/bb">
-            <span class="icon">
-                <img src="../images/tab2.png" alt="">
-            </span>
-            <span class="title">战略标签</span>
-        </router-link>
-        <router-link to="/cc">
-            <span class="icon">
-                <img src="../images/tab3.png" alt="">
-            </span>
-            <span class="title">行业布局</span>
-        </router-link>
-        <router-link to="/dd">
-            <span class="icon">
-                <img src="../images/tab4.png" alt="">
-            </span>
-            <span class="title">红黄绿灯</span>
-        </router-link>
-        <router-link to="/ee">
-            <span class="icon">
-                <img src="../images/tab5.png" alt="">
-            </span>
-            <span class="title">团队业绩</span>
+            <span class="title">{{item.name}}</span>
         </router-link>
     </div>
 </template>
 
 <script>
+import { getNavTab } from './navConfig/navConfig'
 export default {
   data () {
     return {
-
+        navTab:getNavTab()
     }
   }
 }
@@ -68,6 +45,10 @@ export default {
 
 .navTab a .title{
     display: block;
+}
+
+.router-link-active {
+    background: #ccc;
 }
 
 </style>
